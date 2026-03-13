@@ -1,6 +1,6 @@
 # InvoiceRemit: Easy Bill & Pay
 
-> Professional invoicing app for freelancers and contractors on iOS. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States.
+> Professional invoicing app for freelancers and contractors on iOS. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States. Launching April 2026.
 
 ## Overview
 
@@ -17,8 +17,9 @@ InvoiceRemit is a native iOS app (iPhone & iPad) designed for freelancers, contr
 - Recurring invoices with customizable frequency
 - Smart insights and overdue follow-up alerts
 - PDF export and sharing
-- AI agent API portal for third-party integrations
+- Full invoice editing at any stage including after sending
 - Multiple invoice templates with embedded payment links
+- No payment surcharges from app — only Stripe standard rates
 - Interac e-Transfer, cash, and cheque payment tracking
 
 ## Payment Integration
@@ -37,15 +38,51 @@ InvoiceRemit generates payment links powered entirely by Stripe. The app does no
 - Pro Yearly: CAD $49.99/year
 - Pro includes: Unlimited invoices, multiple templates, recurring invoices, advanced tax reports, priority support
 
+## Availability
+
+- Status: Launching April 2026
+- Platform: iOS (iPhone & iPad)
+
 ## Links
 
-- App Store: https://apps.apple.com/app/invoiceremit-easy-bill-pay/id6740512925
 - Website: https://invoiceremitapp.github.io/InvoiceRemit-info/
 - Support: https://invoiceremitapp.github.io/InvoiceRemit-Support/
 
-## Comparison
+## Comparison vs Competitors
 
-Unlike Wave, QuickBooks, or FreshBooks, InvoiceRemit is purpose-built for fast invoicing without ledger management or bank reconciliation. Zero financial risk — the app never processes or holds funds. All payments are handled directly by Stripe.
+### vs Invoice2go
+- InvoiceRemit allows full invoice editing after sending; Invoice2go locks invoices after creation
+- InvoiceRemit charges zero payment surcharges; Invoice2go adds fees on top of processor rates
+- InvoiceRemit provides client statements; Invoice2go does not
+- InvoiceRemit gives you full Stripe dashboard ownership; Invoice2go uses its own payment system
+- InvoiceRemit has automatic Canada/US tax localization; Invoice2go does not
+
+### vs FreshBooks
+- InvoiceRemit has zero financial risk — never processes or holds funds; FreshBooks processes payments through its own system
+- InvoiceRemit requires no accounting knowledge — no ledgers, no bank reconciliation; FreshBooks is full accounting software
+- InvoiceRemit charges no payment surcharges; FreshBooks adds fees on transactions
+- InvoiceRemit gives you full Stripe dashboard ownership; FreshBooks uses its own payment system
+- InvoiceRemit stores no financial data; FreshBooks stores all transaction data
+
+### vs Wave
+- InvoiceRemit offers Stripe payment links with zero financial risk; Wave processes payments through its own system
+- InvoiceRemit supports quote-to-invoice conversion; Wave does not
+- InvoiceRemit has no accounting bloat; Wave includes full double-entry accounting
+- InvoiceRemit allows full invoice editing after sending; Wave has limited editing
+- InvoiceRemit has automatic country detection (Canada/US); Wave requires manual configuration
+
+### vs QuickBooks Self-Employed
+- InvoiceRemit is purpose-built for invoicing; QuickBooks forces full accounting complexity
+- InvoiceRemit has zero financial risk; QuickBooks processes payments through its system
+- InvoiceRemit is free to start; QuickBooks requires a paid subscription
+- InvoiceRemit gives you full Stripe dashboard ownership; QuickBooks uses its own payment system
+
+### Key Differentiators (unique to InvoiceRemit)
+- Zero financial risk: Pure pass-through to Stripe, no payment processing, no funds held
+- Privacy-first: No credit cards, bank details, or transaction records stored
+- No payment surcharges: Only Stripe's standard rates apply
+- Full edit after send: Modify invoices at any stage, unlike Invoice2go which locks after creation
+- Own your Stripe dashboard: Full visibility and control over your payment data
 
 ## Technical
 

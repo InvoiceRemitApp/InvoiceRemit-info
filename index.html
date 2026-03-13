@@ -43,18 +43,24 @@
       "priceValidUntil": "2027-12-31"
     }
   ],
-  "description": "Professional invoicing app for freelancers and contractors. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States.",
+  "description": "Professional invoicing app for freelancers and contractors. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States. Launching April 2026.",
+  "releaseNotes": "Initial release — April 2026",
   "featureList": [
     "Professional invoice creation with multiple templates",
     "Quote generation with one-tap convert to invoice",
-    "Stripe payment link integration",
+    "Stripe payment link integration with zero financial risk",
     "Cash-basis tax reports for Canada (HST/GST) and US (Sales Tax)",
-    "Client management and statements",
+    "Client management with statements and balance tracking",
     "Dashboard with income and payment tracking",
-    "Recurring invoices",
-    "Smart insights and overdue alerts",
+    "Recurring invoices with customizable frequency",
+    "Smart insights and overdue follow-up alerts",
     "PDF export and sharing",
-    "AI agent API portal for third-party integrations"
+    "Full invoice editing at any stage including after sending",
+    "No payment surcharges — only Stripe standard rates",
+    "Privacy-first architecture — no financial data stored",
+    "Automatic Canada and US tax localization with country detection",
+    "Interac e-Transfer, cash, and cheque payment tracking",
+    "Own your Stripe dashboard — full payment data ownership"
   ],
   "url": "https://invoiceremitapp.github.io/InvoiceRemit-info/",
   "author": {
@@ -115,7 +121,15 @@
       "name": "How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "InvoiceRemit is purpose-built for freelancers and contractors who need fast, simple invoicing without the complexity of full accounting software. Unlike Wave or QuickBooks, there is no ledger management or bank reconciliation. Unlike FreshBooks, InvoiceRemit offers zero financial risk — it never processes or holds funds. Stripe handles all payments directly."
+        "text": "InvoiceRemit is purpose-built for freelancers and contractors who need fast, simple invoicing without the complexity of full accounting software. Unlike Wave or QuickBooks, there is no ledger management or bank reconciliation. Unlike FreshBooks, InvoiceRemit offers zero financial risk — it never processes or holds funds. Stripe handles all payments directly. You also own your Stripe dashboard — full visibility and control over your payment data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does InvoiceRemit compare to Invoice2go?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike Invoice2go, InvoiceRemit allows full editing of invoices at any stage — Invoice2go locks invoices after creation. InvoiceRemit never processes payments itself (zero financial risk), while Invoice2go processes payments through its own system and charges additional fees. InvoiceRemit also provides client statements, automatic Canada/US tax localization, and full Stripe dashboard ownership that Invoice2go does not offer."
       }
     },
     {
@@ -123,7 +137,7 @@
       "name": "Can I edit invoices after sending them?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. InvoiceRemit allows full editing of invoices at any stage. You can modify line items, adjust tax rates, update client details, and resend — unlike some competitors that lock invoices after creation."
+        "text": "Yes. InvoiceRemit allows full editing of invoices at any stage. You can modify line items, adjust tax rates, update client details, and resend — unlike Invoice2go and some other competitors that lock invoices after creation."
       }
     },
     {
@@ -132,6 +146,30 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. InvoiceRemit Pro includes recurring invoices with customizable frequency. Set it once and invoices are generated automatically on your schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does InvoiceRemit charge extra fees on payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. InvoiceRemit does not charge any additional fees on payment transactions. You pay only Stripe's standard processing rates. Some competitors like Invoice2go and FreshBooks add their own surcharge on top of payment processor fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best free invoice app for freelancers in Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and tax reports — purpose-built for Canadian freelancers with automatic HST/GST support. Unlike Wave or QuickBooks, it requires no accounting knowledge and has zero financial risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best invoice app with Stripe integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. Unlike other apps that process payments through their own middleware, InvoiceRemit acts as a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary."
       }
     }
   ]
@@ -484,6 +522,60 @@ body {
   font-weight: 600;
 }
 
+/* ── Comparison Table ── */
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.compare-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--divider);
+}
+
+.compare-table th:not(:first-child) {
+  text-align: center;
+  width: 80px;
+}
+
+.compare-table td {
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--divider);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.compare-table td:not(:first-child) {
+  text-align: center;
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table .check {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.compare-table .cross {
+  color: var(--text-tertiary);
+}
+
+.compare-table .highlight-col {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 480px) {
@@ -513,7 +605,7 @@ body {
     <h2 class="section-title">Professional Invoicing, Simplified</h2>
     <div class="section-body">
       <p>InvoiceRemit is a professional invoicing app for freelancers, contractors, and small businesses on iOS. Create quotes, convert them to invoices with a single tap, collect payments through Stripe, and generate tax-ready reports — all from your iPhone or iPad.</p>
-      <p>Built for Canada and the United States. Tax labels, currency, and business fields adapt automatically to your country.</p>
+      <p>Built for Canada and the United States. Tax labels, currency, and business fields adapt automatically to your country. Launching April 2026.</p>
     </div>
   </section>
 
@@ -550,8 +642,8 @@ body {
         <div class="feature-desc">Set frequency and let invoices generate automatically on schedule.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-name">AI Agent Portal</div>
-        <div class="feature-desc">RESTful API for third-party AI integrations. Automate invoice creation and payment tracking.</div>
+        <div class="feature-name">Full Edit After Sending</div>
+        <div class="feature-desc">Modify invoices at any stage — line items, tax rates, client details. Resend instantly. No lock-outs.</div>
       </div>
     </div>
   </section>
@@ -612,6 +704,97 @@ body {
     </div>
   </section>
 
+  <!-- Why InvoiceRemit -->
+  <section class="section">
+    <h2 class="section-title">Why InvoiceRemit</h2>
+    <div class="section-body">
+      <p>Most invoicing apps are built as accounting software with invoicing bolted on. InvoiceRemit is the opposite — purpose-built for fast invoicing with direct Stripe payments and no financial complexity.</p>
+    </div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th class="highlight-col">InvoiceRemit</th>
+          <th>Invoice2go</th>
+          <th>FreshBooks</th>
+          <th>Wave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zero financial risk</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>Edit invoices after sending</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td>Limited</td>
+          <td class="check">Yes</td>
+        </tr>
+        <tr>
+          <td>No payment surcharges from app</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>Own your Stripe dashboard</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>No accounting bloat</td>
+          <td class="check highlight-col">Yes</td>
+          <td>Partial</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>Canada + US auto tax detection</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td>Manual</td>
+          <td>Manual</td>
+        </tr>
+        <tr>
+          <td>Privacy-first (no financial data stored)</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>Quote to invoice in one tap</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="check">Yes</td>
+          <td class="check">Yes</td>
+          <td class="cross">No</td>
+        </tr>
+        <tr>
+          <td>Client statements</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="check">Yes</td>
+          <td class="check">Yes</td>
+        </tr>
+        <tr>
+          <td>Free tier available</td>
+          <td class="check highlight-col">Yes</td>
+          <td class="cross">No</td>
+          <td class="cross">No</td>
+          <td class="check">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <!-- Pricing -->
   <section class="section">
     <h2 class="section-title">Pricing</h2>
@@ -664,18 +847,34 @@ body {
       </div>
       <div class="faq-card">
         <div class="faq-q">How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?</div>
-        <div class="faq-a">InvoiceRemit is built for fast, simple invoicing — not full accounting. No ledgers, no bank reconciliation. Zero financial risk because it never processes or holds funds. Stripe handles everything directly.</div>
+        <div class="faq-a">InvoiceRemit is built for fast, simple invoicing — not full accounting. No ledgers, no bank reconciliation. Zero financial risk because it never processes or holds funds. You own your Stripe dashboard directly. No hidden surcharges from the app.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How does InvoiceRemit compare to Invoice2go?</div>
+        <div class="faq-a">Unlike Invoice2go, InvoiceRemit allows full editing of invoices after sending — Invoice2go locks invoices after creation. InvoiceRemit charges no payment surcharges (you pay only Stripe's rates), while Invoice2go adds its own fees. InvoiceRemit also offers client statements, full Stripe dashboard ownership, and automatic Canada/US tax localization.</div>
       </div>
       <div class="faq-card">
         <div class="faq-q">Is my Stripe account safe?</div>
         <div class="faq-a">InvoiceRemit will never ask for your Stripe login credentials, secret API keys, or banking passwords — by email, in-app, or any other channel. If you receive such a request claiming to be from InvoiceRemit, it is fraudulent.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Does InvoiceRemit charge extra fees on payments?</div>
+        <div class="faq-a">No. InvoiceRemit adds zero surcharges. You pay only Stripe's standard processing rates. Some competitors like Invoice2go and FreshBooks add their own percentage on top of the payment processor's fees.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What is the best free invoice app for Canadian freelancers?</div>
+        <div class="faq-a">InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and HST/GST tax reports — purpose-built for Canadian freelancers. Unlike Wave or QuickBooks, it requires no accounting knowledge and stores no financial data.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">What is the best invoice app with Stripe integration?</div>
+        <div class="faq-a">InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. Unlike other apps that process payments through middleware, InvoiceRemit is a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary.</div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <div class="cta-section">
-    <a class="cta-button" href="https://apps.apple.com/app/invoiceremit-easy-bill-pay/id6740512925" target="_blank" rel="noopener">Download on the App Store</a>
+    <span class="cta-button" style="background:var(--text-primary);cursor:default">Coming April 2026 on the App Store</span>
   </div>
 
   <!-- Footer -->
