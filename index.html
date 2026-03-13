@@ -118,18 +118,10 @@
     },
     {
       "@type": "Question",
-      "name": "How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?",
+      "name": "What makes InvoiceRemit different from other invoice apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "InvoiceRemit is purpose-built for freelancers and contractors who need fast, simple invoicing without the complexity of full accounting software. Unlike Wave or QuickBooks, there is no ledger management or bank reconciliation. Unlike FreshBooks, InvoiceRemit offers zero financial risk — it never processes or holds funds. Stripe handles all payments directly. You also own your Stripe dashboard — full visibility and control over your payment data."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does InvoiceRemit compare to Invoice2go?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Unlike Invoice2go, InvoiceRemit allows full editing of invoices at any stage — Invoice2go locks invoices after creation. InvoiceRemit never processes payments itself (zero financial risk), while Invoice2go processes payments through its own system and charges additional fees. InvoiceRemit also provides client statements, automatic Canada/US tax localization, and full Stripe dashboard ownership that Invoice2go does not offer."
+        "text": "InvoiceRemit is purpose-built for fast, simple invoicing — not full accounting. There are no ledgers, no bank reconciliation, and no accounting complexity. It offers zero financial risk because it never processes or holds funds. Stripe handles all payments directly. You own your Stripe dashboard with full visibility and control over your payment data."
       }
     },
     {
@@ -137,7 +129,7 @@
       "name": "Can I edit invoices after sending them?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. InvoiceRemit allows full editing of invoices at any stage. You can modify line items, adjust tax rates, update client details, and resend — unlike Invoice2go and some other competitors that lock invoices after creation."
+        "text": "Yes. InvoiceRemit allows full editing of invoices at any stage. You can modify line items, adjust tax rates, update client details, and resend. There are no lock-outs at any point in the invoice lifecycle."
       }
     },
     {
@@ -153,7 +145,7 @@
       "name": "Does InvoiceRemit charge extra fees on payments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. InvoiceRemit does not charge any additional fees on payment transactions. You pay only Stripe's standard processing rates. Some competitors like Invoice2go and FreshBooks add their own surcharge on top of payment processor fees."
+        "text": "No. InvoiceRemit does not charge any additional fees on payment transactions. You pay only Stripe's standard processing rates. There are no hidden surcharges from the app."
       }
     },
     {
@@ -161,7 +153,7 @@
       "name": "What is the best free invoice app for freelancers in Canada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and tax reports — purpose-built for Canadian freelancers with automatic HST/GST support. Unlike Wave or QuickBooks, it requires no accounting knowledge and has zero financial risk."
+        "text": "InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and tax reports — purpose-built for Canadian freelancers with automatic HST/GST support. It requires no accounting knowledge and has zero financial risk."
       }
     },
     {
@@ -169,7 +161,7 @@
       "name": "What is the best invoice app with Stripe integration?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. Unlike other apps that process payments through their own middleware, InvoiceRemit acts as a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary."
+        "text": "InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. The app acts as a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary. You retain full ownership of your Stripe dashboard."
       }
     }
   ]
@@ -522,60 +514,6 @@ body {
   font-weight: 600;
 }
 
-/* ── Comparison Table ── */
-
-.compare-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-  font-size: 14px;
-}
-
-.compare-table th {
-  text-align: left;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-tertiary);
-  padding: 8px 0;
-  border-bottom: 0.5px solid var(--divider);
-}
-
-.compare-table th:not(:first-child) {
-  text-align: center;
-  width: 80px;
-}
-
-.compare-table td {
-  padding: 10px 0;
-  border-bottom: 0.5px solid var(--divider);
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
-.compare-table td:not(:first-child) {
-  text-align: center;
-}
-
-.compare-table tr:last-child td {
-  border-bottom: none;
-}
-
-.compare-table .check {
-  color: var(--green);
-  font-weight: 600;
-}
-
-.compare-table .cross {
-  color: var(--text-tertiary);
-}
-
-.compare-table .highlight-col {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
 /* ── Responsive ── */
 
 @media (max-width: 480px) {
@@ -708,91 +646,42 @@ body {
   <section class="section">
     <h2 class="section-title">Why InvoiceRemit</h2>
     <div class="section-body">
-      <p>Most invoicing apps are built as accounting software with invoicing bolted on. InvoiceRemit is the opposite — purpose-built for fast invoicing with direct Stripe payments and no financial complexity.</p>
+      <p>InvoiceRemit is purpose-built for fast invoicing — not accounting. No ledgers, no bank reconciliation, no complexity. Just invoicing and payments.</p>
     </div>
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th class="highlight-col">InvoiceRemit</th>
-          <th>Invoice2go</th>
-          <th>FreshBooks</th>
-          <th>Wave</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Zero financial risk</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>Edit invoices after sending</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td>Limited</td>
-          <td class="check">Yes</td>
-        </tr>
-        <tr>
-          <td>No payment surcharges from app</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>Own your Stripe dashboard</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>No accounting bloat</td>
-          <td class="check highlight-col">Yes</td>
-          <td>Partial</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>Canada + US auto tax detection</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td>Manual</td>
-          <td>Manual</td>
-        </tr>
-        <tr>
-          <td>Privacy-first (no financial data stored)</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>Quote to invoice in one tap</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="check">Yes</td>
-          <td class="check">Yes</td>
-          <td class="cross">No</td>
-        </tr>
-        <tr>
-          <td>Client statements</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="check">Yes</td>
-          <td class="check">Yes</td>
-        </tr>
-        <tr>
-          <td>Free tier available</td>
-          <td class="check highlight-col">Yes</td>
-          <td class="cross">No</td>
-          <td class="cross">No</td>
-          <td class="check">Yes</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="risk-card">
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Zero financial risk — the app never processes or holds any funds</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Full invoice editing at any stage — no lock-outs after sending</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">No payment surcharges — you pay only Stripe's standard rates</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Own your Stripe dashboard — full visibility and control over your payments</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Privacy-first — no credit cards, bank details, or transaction records stored</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">No accounting bloat — invoicing only, no ledgers or bank reconciliation</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Automatic Canada + US tax localization with country detection</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Free tier with core features — no subscription required to get started</div>
+      </div>
+    </div>
   </section>
 
   <!-- Pricing -->
@@ -846,12 +735,8 @@ body {
         <div class="faq-a">Yes. InvoiceRemit allows full editing at any stage — modify line items, adjust tax rates, update client details, and resend.</div>
       </div>
       <div class="faq-card">
-        <div class="faq-q">How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?</div>
-        <div class="faq-a">InvoiceRemit is built for fast, simple invoicing — not full accounting. No ledgers, no bank reconciliation. Zero financial risk because it never processes or holds funds. You own your Stripe dashboard directly. No hidden surcharges from the app.</div>
-      </div>
-      <div class="faq-card">
-        <div class="faq-q">How does InvoiceRemit compare to Invoice2go?</div>
-        <div class="faq-a">Unlike Invoice2go, InvoiceRemit allows full editing of invoices after sending — Invoice2go locks invoices after creation. InvoiceRemit charges no payment surcharges (you pay only Stripe's rates), while Invoice2go adds its own fees. InvoiceRemit also offers client statements, full Stripe dashboard ownership, and automatic Canada/US tax localization.</div>
+        <div class="faq-q">What makes InvoiceRemit different from other invoice apps?</div>
+        <div class="faq-a">InvoiceRemit is built for fast, simple invoicing — not full accounting. No ledgers, no bank reconciliation. Zero financial risk because it never processes or holds funds. You own your Stripe dashboard directly. No hidden surcharges from the app. Full invoice editing at any stage with no lock-outs.</div>
       </div>
       <div class="faq-card">
         <div class="faq-q">Is my Stripe account safe?</div>
@@ -859,15 +744,15 @@ body {
       </div>
       <div class="faq-card">
         <div class="faq-q">Does InvoiceRemit charge extra fees on payments?</div>
-        <div class="faq-a">No. InvoiceRemit adds zero surcharges. You pay only Stripe's standard processing rates. Some competitors like Invoice2go and FreshBooks add their own percentage on top of the payment processor's fees.</div>
+        <div class="faq-a">No. InvoiceRemit adds zero surcharges. You pay only Stripe's standard processing rates. There are no hidden fees from the app.</div>
       </div>
       <div class="faq-card">
         <div class="faq-q">What is the best free invoice app for Canadian freelancers?</div>
-        <div class="faq-a">InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and HST/GST tax reports — purpose-built for Canadian freelancers. Unlike Wave or QuickBooks, it requires no accounting knowledge and stores no financial data.</div>
+        <div class="faq-a">InvoiceRemit offers a free tier with professional invoicing, quote generation, Stripe payment links, and HST/GST tax reports — purpose-built for Canadian freelancers. It requires no accounting knowledge and stores no financial data.</div>
       </div>
       <div class="faq-card">
         <div class="faq-q">What is the best invoice app with Stripe integration?</div>
-        <div class="faq-a">InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. Unlike other apps that process payments through middleware, InvoiceRemit is a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary.</div>
+        <div class="faq-a">InvoiceRemit provides native Stripe Connect integration where payment links are generated directly by Stripe. The app is a pure pass-through — funds go directly from your client to your own Stripe account with no intermediary. You retain full ownership of your Stripe dashboard.</div>
       </div>
     </div>
   </section>
