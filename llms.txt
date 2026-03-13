@@ -1,0 +1,55 @@
+# InvoiceRemit: Easy Bill & Pay
+
+> Professional invoicing app for freelancers and contractors on iOS. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States.
+
+## Overview
+
+InvoiceRemit is a native iOS app (iPhone & iPad) designed for freelancers, contractors, and small businesses who need fast, professional invoicing without the complexity of full accounting software. It supports businesses in Canada (HST/GST) and the United States (Sales Tax) with automatic localization of currency, tax labels, and business fields.
+
+## Key Features
+
+- Professional invoice creation with multiple templates
+- Quote generation with one-tap convert to invoice
+- Stripe payment link integration (zero financial risk — app never holds funds)
+- Cash-basis tax reports for Canada and the US
+- Client management with statements and balance tracking
+- Dashboard with income, unpaid, and overdue tracking
+- Recurring invoices with customizable frequency
+- Smart insights and overdue follow-up alerts
+- PDF export and sharing
+- AI agent API portal for third-party integrations
+- Multiple invoice templates with embedded payment links
+- Interac e-Transfer, cash, and cheque payment tracking
+
+## Payment Integration
+
+InvoiceRemit generates payment links powered entirely by Stripe. The app does not process, store, or access any payment transactions. Funds transfer directly from the payer to the user's own Stripe account. Only the Stripe Connected Account ID (a non-sensitive identifier) is retained. All financial data remains within Stripe's PCI-compliant infrastructure.
+
+## Countries Supported
+
+- Canada — HST/GST tax labels, CAD currency, province selection, GST/HST registration number
+- United States — Sales Tax labels, USD currency, state selection, Tax ID (EIN) field
+
+## Pricing
+
+- Free: Core invoicing features
+- Pro Monthly: CAD $4.99/month
+- Pro Yearly: CAD $49.99/year
+- Pro includes: Unlimited invoices, multiple templates, recurring invoices, advanced tax reports, priority support
+
+## Links
+
+- App Store: https://apps.apple.com/app/invoiceremit-easy-bill-pay/id6740512925
+- Website: https://invoiceremitapp.github.io/InvoiceRemit-info/
+- Support: https://invoiceremitapp.github.io/InvoiceRemit-Support/
+
+## Comparison
+
+Unlike Wave, QuickBooks, or FreshBooks, InvoiceRemit is purpose-built for fast invoicing without ledger management or bank reconciliation. Zero financial risk — the app never processes or holds funds. All payments are handled directly by Stripe.
+
+## Technical
+
+- Platform: iOS 17+
+- Built with: SwiftUI, SwiftData
+- Backend: Firebase (Cloud Functions, Firestore)
+- Payments: Stripe Connect (OAuth)

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InvoiceRemit — Easy Bill &amp; Pay | Invoice &amp; Payment App for Freelancers</title>
+<meta name="description" content="InvoiceRemit is a professional invoicing app for freelancers and contractors. Create quotes, send invoices, collect payments via Stripe, and track taxes — Canada &amp; US.">
+<meta name="keywords" content="invoice app, freelancer invoicing, contractor billing, Stripe payments, quote generator, tax report, payment tracking, iOS invoice app">
+
+<!-- Open Graph -->
+<meta property="og:title" content="InvoiceRemit — Easy Bill &amp; Pay">
+<meta property="og:description" content="Professional invoicing for freelancers. Quotes, invoices, Stripe payments, tax reports. Zero financial risk.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://invoiceremitapp.github.io/InvoiceRemit-info/">
+
+<!-- Schema.org: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "InvoiceRemit: Easy Bill & Pay",
+  "operatingSystem": "iOS 17+",
+  "applicationCategory": "BusinessApplication",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CAD",
+      "description": "Free tier with core invoicing features"
+    },
+    {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "CAD",
+      "description": "InvoiceRemit Pro — Monthly",
+      "priceValidUntil": "2027-12-31"
+    },
+    {
+      "@type": "Offer",
+      "price": "49.99",
+      "priceCurrency": "CAD",
+      "description": "InvoiceRemit Pro — Yearly",
+      "priceValidUntil": "2027-12-31"
+    }
+  ],
+  "description": "Professional invoicing app for freelancers and contractors. Create quotes, send invoices, collect payments via Stripe, and generate tax reports for Canada and the United States.",
+  "featureList": [
+    "Professional invoice creation with multiple templates",
+    "Quote generation with one-tap convert to invoice",
+    "Stripe payment link integration",
+    "Cash-basis tax reports for Canada (HST/GST) and US (Sales Tax)",
+    "Client management and statements",
+    "Dashboard with income and payment tracking",
+    "Recurring invoices",
+    "Smart insights and overdue alerts",
+    "PDF export and sharing",
+    "AI agent API portal for third-party integrations"
+  ],
+  "url": "https://invoiceremitapp.github.io/InvoiceRemit-info/",
+  "author": {
+    "@type": "Organization",
+    "name": "InvoiceRemit"
+  }
+}
+</script>
+
+<!-- Schema.org: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is InvoiceRemit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit is a professional invoicing app for iOS designed for freelancers, contractors, and small businesses. It lets you create quotes, convert them to invoices, collect payments via Stripe, and generate tax reports — all from your iPhone or iPad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does InvoiceRemit store my financial data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. InvoiceRemit does not process, store, or access any payment transactions. The only piece of information retained is your Stripe Connected Account ID, a non-sensitive identifier. All payment processing, fund transfers, and financial data remain exclusively within Stripe's PCI-compliant infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do Stripe payments work in InvoiceRemit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit generates payment links powered by Stripe. When your client pays, funds transfer directly from the payer to your own Stripe account. InvoiceRemit never holds, routes, or intermediates any money. It simply displays the payment status retrieved from Stripe's API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries does InvoiceRemit support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit supports businesses in Canada and the United States. Tax labels, currency, and registration fields adapt automatically based on your business country — HST/GST for Canada, Sales Tax for the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is InvoiceRemit free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit offers a free tier with core invoicing features. InvoiceRemit Pro unlocks premium features including unlimited invoices, multiple templates, recurring invoices, and advanced tax reports — available at CAD $4.99/month or CAD $49.99/year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InvoiceRemit is purpose-built for freelancers and contractors who need fast, simple invoicing without the complexity of full accounting software. Unlike Wave or QuickBooks, there is no ledger management or bank reconciliation. Unlike FreshBooks, InvoiceRemit offers zero financial risk — it never processes or holds funds. Stripe handles all payments directly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit invoices after sending them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. InvoiceRemit allows full editing of invoices at any stage. You can modify line items, adjust tax rates, update client details, and resend — unlike some competitors that lock invoices after creation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does InvoiceRemit support recurring invoices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. InvoiceRemit Pro includes recurring invoices with customizable frequency. Set it once and invoices are generated automatically on your schedule."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --bg: #f2f2f7;
+  --card-bg: #ffffff;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #aeaeb2;
+  --faq-bg: #e8e8ed;
+  --divider: #d2d2d7;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --green: #34c759;
+  --radius: 12px;
+  --radius-sm: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card-bg: #1c1c1e;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --text-tertiary: #636366;
+    --faq-bg: #2c2c2e;
+    --divider: #38383a;
+  }
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.47059;
+  font-size: 17px;
+  letter-spacing: -0.022em;
+}
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Header ── */
+
+.header {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.header-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.header-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.125;
+  margin-bottom: 6px;
+}
+
+.header .subtitle {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+/* ── Sections ── */
+
+.section {
+  padding: 40px 0;
+}
+
+.section + .section {
+  border-top: 0.5px solid var(--divider);
+}
+
+.section-title {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.19;
+}
+
+.section-body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.53;
+  letter-spacing: -0.009em;
+}
+
+.section-body p + p {
+  margin-top: 12px;
+}
+
+/* ── Feature List ── */
+
+.feature-grid {
+  display: grid;
+  gap: 0;
+}
+
+.feature-item {
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--divider);
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.46;
+}
+
+/* ── Risk Section ── */
+
+.risk-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin-top: 16px;
+}
+
+.risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.risk-item + .risk-item {
+  border-top: 0.5px solid var(--divider);
+}
+
+.risk-check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.risk-check svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--green);
+}
+
+.risk-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.47;
+}
+
+/* ── FAQ Cards ── */
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.faq-card {
+  background: var(--faq-bg);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.faq-q {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+
+.faq-a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.46;
+}
+
+/* ── Pricing ── */
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--divider);
+}
+
+.pricing-row:last-child {
+  border-bottom: none;
+}
+
+.pricing-label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.pricing-value {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.pricing-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--green);
+  background: none;
+  margin-left: 8px;
+}
+
+/* ── CTA ── */
+
+.cta-section {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 980px;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: background 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--accent-hover);
+}
+
+/* ── Footer ── */
+
+.footer {
+  text-align: center;
+  padding: 32px 0 48px;
+  border-top: 0.5px solid var(--divider);
+}
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+/* ── Stripe Flow ── */
+
+.flow-steps {
+  margin-top: 16px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.flow-step + .flow-step {
+  border-top: 0.5px solid var(--divider);
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.step-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.47;
+}
+
+.step-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .header { padding: 40px 0 28px; }
+  .header h1 { font-size: 26px; }
+  .header .subtitle { font-size: 17px; }
+  .section { padding: 32px 0; }
+  .section-title { font-size: 19px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM9 13h6v1.5H9V13zm0 3h6v1.5H9V16zm0-6h3v1.5H9V10z"/></svg>
+    </div>
+    <h1>InvoiceRemit</h1>
+    <p class="subtitle">Easy Bill &amp; Pay</p>
+  </header>
+
+  <!-- What is InvoiceRemit -->
+  <section class="section">
+    <h2 class="section-title">Professional Invoicing, Simplified</h2>
+    <div class="section-body">
+      <p>InvoiceRemit is a professional invoicing app for freelancers, contractors, and small businesses on iOS. Create quotes, convert them to invoices with a single tap, collect payments through Stripe, and generate tax-ready reports — all from your iPhone or iPad.</p>
+      <p>Built for Canada and the United States. Tax labels, currency, and business fields adapt automatically to your country.</p>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="section">
+    <h2 class="section-title">Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-name">Professional Invoices</div>
+        <div class="feature-desc">Multiple templates with your logo, business details, and integrated payment links. Send as PDF.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Quick Quotes</div>
+        <div class="feature-desc">Build quotes in under a minute. Convert to invoice with one tap when approved.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Stripe Payment Links</div>
+        <div class="feature-desc">Clients pay directly through Stripe. Funds go straight to your account — InvoiceRemit never touches your money.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Tax Reports</div>
+        <div class="feature-desc">Cash-basis tax summaries for HST/GST (Canada) and Sales Tax (US). Ready for your accountant.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Client Management</div>
+        <div class="feature-desc">Organized client profiles with history, statements, and outstanding balances at a glance.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Dashboard &amp; Insights</div>
+        <div class="feature-desc">Track income, unpaid invoices, and overdue items. Smart alerts for follow-ups.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">Recurring Invoices</div>
+        <div class="feature-desc">Set frequency and let invoices generate automatically on schedule.</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-name">AI Agent Portal</div>
+        <div class="feature-desc">RESTful API for third-party AI integrations. Automate invoice creation and payment tracking.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zero Financial Risk -->
+  <section class="section">
+    <h2 class="section-title">Zero Financial Risk</h2>
+    <div class="section-body">
+      <p>InvoiceRemit does not process, store, or have access to any payment transactions. The app generates payment links powered entirely by Stripe, Inc. — funds transfer directly from your client to your connected Stripe account with no intermediary.</p>
+    </div>
+    <div class="risk-card">
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">No credit card numbers, bank details, or transaction records stored</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">InvoiceRemit never holds, routes, or intermediates any funds</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Payment links are generated and hosted entirely by Stripe</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">Only your Stripe Account ID is retained — a non-sensitive public identifier</div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <div class="risk-text">All financial data remains within Stripe's PCI-compliant infrastructure</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Stripe Integration Works -->
+  <section class="section">
+    <h2 class="section-title">How Payments Work</h2>
+    <div class="section-body">
+      <p>InvoiceRemit connects to Stripe using the industry-standard OAuth flow. Your credentials are entered directly on Stripe's website — never shared with InvoiceRemit. Once connected, the app generates payment links on your behalf. That's it.</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Connect your Stripe account</strong> — you're redirected to Stripe's secure site to authorize</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Create an invoice</strong> — add items, tax, and your client's details</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Send the payment link</strong> — Stripe generates and hosts the checkout page</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Client pays directly to you</strong> — funds go to your Stripe account, never through InvoiceRemit</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <h2 class="section-title">Pricing</h2>
+    <div>
+      <div class="pricing-row">
+        <div><span class="pricing-label">Free</span><span class="pricing-tag">Core Features</span></div>
+        <div class="pricing-value">$0</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-label">Pro — Monthly</div>
+        <div class="pricing-value">CA $4.99/mo</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pricing-label">Pro — Yearly</div>
+        <div class="pricing-value">CA $49.99/yr</div>
+      </div>
+    </div>
+    <div class="section-body" style="margin-top:14px">
+      <p>Pro unlocks unlimited invoices, multiple templates, recurring invoices, advanced tax reports, and priority support.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2 class="section-title">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-card">
+        <div class="faq-q">What is InvoiceRemit?</div>
+        <div class="faq-a">A professional invoicing app for iOS. Create quotes, send invoices, collect payments via Stripe, and generate tax reports — designed for freelancers and contractors in Canada and the US.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Does InvoiceRemit store my financial data?</div>
+        <div class="faq-a">No. InvoiceRemit stores only your Stripe Connected Account ID — a non-sensitive identifier. No credit card numbers, bank details, transaction records, or financial credentials are ever stored. All payment data remains exclusively within Stripe.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How do payments work?</div>
+        <div class="faq-a">InvoiceRemit generates payment links powered by Stripe. When your client pays, funds transfer directly from the payer to your Stripe account. InvoiceRemit never holds, routes, or touches any funds.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Why am I redirected to Stripe's website?</div>
+        <div class="faq-a">For security. The connection process uses Stripe's official OAuth flow. You sign in directly with Stripe — InvoiceRemit never sees your login credentials. This is the same standard used by all Stripe Connect platforms.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Which countries are supported?</div>
+        <div class="faq-a">Canada and the United States. Tax labels, currency, and business registration fields adapt automatically based on your business country — HST/GST for Canada, Sales Tax for the US.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Can I edit invoices after sending?</div>
+        <div class="faq-a">Yes. InvoiceRemit allows full editing at any stage — modify line items, adjust tax rates, update client details, and resend.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">How does InvoiceRemit compare to Wave, FreshBooks, or QuickBooks?</div>
+        <div class="faq-a">InvoiceRemit is built for fast, simple invoicing — not full accounting. No ledgers, no bank reconciliation. Zero financial risk because it never processes or holds funds. Stripe handles everything directly.</div>
+      </div>
+      <div class="faq-card">
+        <div class="faq-q">Is my Stripe account safe?</div>
+        <div class="faq-a">InvoiceRemit will never ask for your Stripe login credentials, secret API keys, or banking passwords — by email, in-app, or any other channel. If you receive such a request claiming to be from InvoiceRemit, it is fraudulent.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a class="cta-button" href="https://apps.apple.com/app/invoiceremit-easy-bill-pay/id6740512925" target="_blank" rel="noopener">Download on the App Store</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://invoiceremitapp.github.io/InvoiceRemit-Support/">Support</a>
+      <a href="https://invoiceremitapp.github.io/InvoiceRemit-Support/#feedback">Feedback</a>
+      <a href="https://invoiceremitapp.github.io/InvoiceRemit-info/llms.txt">llms.txt</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 InvoiceRemit. All rights reserved.<br>
+      InvoiceRemit is not a financial institution and does not process payments.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

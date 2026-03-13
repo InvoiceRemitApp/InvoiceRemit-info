@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://invoiceremitapp.github.io/InvoiceRemit-info/sitemap.xml
